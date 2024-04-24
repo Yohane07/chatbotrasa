@@ -1,7 +1,7 @@
 version: "3.1"
 
 nlu:
-- intent: greet
+- intent: saluer
   examples: |
     - hey
     - hello
@@ -16,6 +16,14 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
+    - salut 
+    - slt
+    - salut mec
+    - Wesh
+    - Bonjour
+    - Mon ga 
+    - Debut
+  
 
 - intent: goodbye
   examples: |
@@ -29,8 +37,14 @@ nlu:
     - see you around
     - bye bye
     - see you later
+    - salut 
+    - bisous 
+    - salut 
+    - aurevoir 
+    - à bientôt
+    - à plus tard 
 
-- intent: affirm
+- intent: affirmation
   examples: |
     - yes
     - y
@@ -38,8 +52,15 @@ nlu:
     - of course
     - that sounds good
     - correct
+    - oui 
+    - ouais 
+    - yep 
+    - ouais ouais 
+    - oui 
+    - exact
+    - c'est ça 
 
-- intent: deny
+- intent: refuser
   examples: |
     - no
     - n
@@ -48,8 +69,15 @@ nlu:
     - don't like that
     - no way
     - not really
+    - non 
+    - je suis pas d'accord 
+    - hum hum 
+    - peut être 
+    - pas 
+    - absolument pas 
+    - négatif
 
-- intent: mood_great
+- intent: bon_mood
   examples: |
     - perfect
     - great
@@ -65,8 +93,12 @@ nlu:
     - so so perfect
     - so good
     - so perfect
+    - trop bien 
+    - excellent 
+    - ouaiissss
+    - aller 
 
-- intent: mood_unhappy
+- intent: triste_mood
   examples: |
     - my day was horrible
     - I am sad
@@ -82,10 +114,14 @@ nlu:
     - extremly sad
     - so saad
     - so sad
+    - je ne vais pas bien 
+    - je suis triste 
+    - je ne me sens pas bien 
 
-- intent: bot_challenge
+- intent: je_suis_un_robot
   examples: |
     - are you a bot?
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+    - es-tu un robot ou mieux une IA ?
