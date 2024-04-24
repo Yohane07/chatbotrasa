@@ -43,3 +43,21 @@ stories:
       are you a bot?
     intent: je_suis_un_robot
   - action: utter_je_suis_un_robot
+
+- story: Demande de météo
+  steps:
+    - user: |
+        Quel temps fait-il aujourd'hui ?
+      intent: météo
+    - action: utter_météo
+
+- story: Réservation d'hôtel
+  steps:
+    - user: |
+        Je voudrais réserver une chambre d'hôtel.
+      intent: demande_reservation_hotel
+    - action: utter_demande_reservation_hotel
+    - user: |
+        Je prévois d'arriver le 25 avril.
+      intent: fournir_details_reservation
+    - action: utter_confirmation_reservation

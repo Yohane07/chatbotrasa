@@ -19,3 +19,16 @@ stories:
   - action: utter_confirmation_aide
   - intent: affirmer
   - action: utter_content
+
+- story: Demande de météo
+  steps:
+    - intent: météo
+    - action: utter_météo
+
+- story: Réservation d'hôtel
+  steps:
+    - intent: demande_reservation_hotel
+    - action: utter_demande_reservation_hotel
+    - intent: fournir_details_reservation
+    - action: utter_fournir_details_reservation
+    - action: utter_confirmation_reservation

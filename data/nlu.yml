@@ -125,3 +125,35 @@ nlu:
     - am I talking to a bot?
     - am I talking to a human?
     - es-tu un robot ou mieux une IA ?
+
+- intent: météo
+  examples: |
+    - quel temps fait-il aujourd'hui ?
+    - quelle est la météo ?
+    - va-t-il pleuvoir demain ?
+    - aurons-nous du soleil ce week-end ?
+    - j'aimerais connaître la météo
+
+- intent: demande_reservation_hotel
+  examples: |
+    - Je voudrais réserver une chambre d'hôtel.
+    - Pouvez-vous m'aider à trouver un hôtel ?
+    - Est-ce que vous pouvez réserver une chambre pour moi ?
+    - Je veux passer une nuit à l'hôtel.
+    - J'aimerais réserver une chambre pour ce week-end.
+    - Combien coûte une nuit à l'hôtel ?
+    - Y a-t-il des chambres disponibles ce soir ?
+    - Est-ce que vous pouvez me recommander un bon hôtel ?
+    - Je cherche un hébergement pour mon voyage.
+    
+- intent: fournir_details_reservation
+  examples: |
+    - Je prévois d'arriver le 25 avril.
+    - J'aurai besoin de la chambre pour deux adultes et un enfant.
+    - Pouvez-vous me trouver un hôtel près du centre-ville ?
+    - Est-ce que le petit déjeuner est inclus dans le tarif de la chambre ?
+    - Y a-t-il un parking disponible à l'hôtel ?
+    - Quelles sont les installations de l'hôtel ?
+    - À quelle heure est le check-in et le check-out ?
+    - Je voudrais une chambre non-fumeur.
+    - Je préfère une chambre avec vue sur la mer.Z

@@ -8,6 +8,9 @@ intents:
   - bon_mood
   - triste_mood
   - je_suis_un_robot
+  - météo
+  - demande_reservation_hotel
+  - fournir_details_reservation
 
 responses:
   utter_saluer:
@@ -31,6 +34,22 @@ responses:
 
   utter_je_suis_un_robot:
   - text: "Je suis un robot, conçu par Rasa."
+
+  utter_météo:
+    - text: "Vous pouvez consulter la météo mondiale sur ce lien : 
+    [lien](https://meteofrance.com/meteo-monde/chek/8375110)"
+
+  utter_demande_reservation_hotel:
+    - text: "Bien sûr ! Je vais vous aider à trouver un hôtel. 
+    Pouvez-vous me donner vos dates d'arrivée et de départ ainsi que le nombre de personnes ?"
+
+  utter_fournir_details_reservation:
+    - text: "D'accord. Pourriez-vous préciser votre date d'arrivée, 
+    le nombre de personnes et vos préférences ?"
+
+  utter_confirmation_reservation:
+    - text: "Votre réservation d'hôtel a été confirmée ! Voici les détails 
+    : [Insérer détails de la réservation]."
 
 session_config:
   session_expiration_time: 60
