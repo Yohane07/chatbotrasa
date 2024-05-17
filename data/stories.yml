@@ -1,34 +1,37 @@
 version: "3.1"
 
 stories:
+  - story: Réservation de table
+    steps:
+      - intent: reservation_table
+      - action: utter_ask_date_reservation
+      - intent: fournir_details_reservation
+        entities:
+          - date_reservation
+      - action: utter_ask_nombre_personnes
+      - intent: fournir_details_reservation
+        entities:
+          - nombre_personnes
+      - action: utter_ask_nom_reservation
+      - intent: fournir_details_reservation
+        entities:
+          - nom_reservation
+      - action: utter_ask_numero_telephone
+      - intent: fournir_details_reservation
+        entities:
+          - numero_telephone
+      - action: action_verifier_disponibilite
+      - action: action_generer_numero_reservation
+      - action: utter_confirmation_reservation
 
-- story: chemin joyeux
-  steps:
-  - intent: saluer
-  - action: utter_saluer
-  - intent: bon_mood
-  - action: utter_content
+  - story: Annulation de réservation
+    steps:
+      - intent: annuler_reservation
+      - action: action_annuler_reservation
+      - action: utter_annulation_confirmation
 
-- story: chemin triste
-  steps:
-  - intent: saluer
-  - action: utter_saluer
-  - intent: triste_mood
-  - action: utter_triste_mood
-  - action: utter_remettre_bien
-  - action: utter_confirmation_aide
-  - intent: affirmer
-  - action: utter_content
-
-- story: Demande de météo
-  steps:
-    - intent: météo
-    - action: utter_météo
-
-- story: Réservation d'hôtel
-  steps:
-    - intent: demande_reservation_hotel
-    - action: utter_demande_reservation_hotel
-    - intent: fournir_details_reservation
-    - action: utter_fournir_details_reservation
-    - action: utter_confirmation_reservation
+  - story: Obtenir des informations sur la réservation
+    steps:
+      - intent: obtenir_information_reservation
+      - action: action_obtenir_information_reservation
+      - action: utter_information_reservation

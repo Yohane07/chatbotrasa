@@ -1,63 +1,51 @@
-#### This file contains tests to evaluate that your bot behaves as expected.
-#### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
+version: "3.1"
 
 stories:
-- story: chemin joyeux
-  steps:
-  - user: |
-      salut
-    intent: saluer
-  - action: utter_saluer
-  - user: |
-      amazing
-    intent: bon_mood
-  - action: utter_content
+  - story: Réservation de table réussie
+    steps:
+      - user: |
+          Je voudrais réserver une table.
+        intent: reservation_table
+      - action: utter_ask_date_reservation
+      - user: |
+          Le 20 avril.
+        intent: fournir_details_reservation
+        entities:
+          - date_reservation: "20 avril"
+      - action: utter_ask_nombre_personnes
+      - user: |
+          Pour 2 personnes.
+        intent: fournir_details_reservation
+        entities:
+          - nombre_personnes: "2 personnes"
+      - action: utter_ask_nom_reservation
+      - user: |
+          Sous le nom de Jean Dupont.
+        intent: fournir_details_reservation
+        entities:
+          - nom_reservation: "Jean Dupont"
+      - action: utter_ask_numero_telephone
+      - user: |
+          Mon numéro de téléphone est 0601020304.
+        intent: fournir_details_reservation
+        entities:
+          - numero_telephone: "0601020304"
+      - action: action_verifier_disponibilite
+      - action: action_generer_numero_reservation
+      - action: utter_confirmation_reservation
 
-- story: chemin triste
-  steps:
-  - user: |
-      hi
-    intent: saluer
-  - action: utter_saluer
-  - user: |
-      je ne vais pas bien
-    intent: triste_mood
-  - action: utter_triste_mood
-  - action: utter_remettre_bien
-  - action: utter_confirmation_aide
-  - user: |
-      non
-    intent: refuser
-  - action: utter_content
+  - story: Annulation de réservation réussie
+    steps:
+      - user: |
+          J'aimerais annuler ma réservation.
+        intent: annuler_reservation
+      - action: action_annuler_reservation
+      - action: utter_annulation_confirmation
 
-- story: dire aurevoir
-  steps:
-  - user: |
-      bye
-    intent: aurevoir
-  - action: utter_aurevoir
-
-- story: je suis un robot
-  steps:
-  - user: |
-      are you a bot?
-    intent: je_suis_un_robot
-  - action: utter_je_suis_un_robot
-
-- story: Demande de météo
-  steps:
-    - user: |
-        Quel temps fait-il aujourd'hui ?
-      intent: météo
-    - action: utter_météo
-
-- story: Réservation d'hôtel
-  steps:
-    - user: |
-        Je voudrais réserver une chambre d'hôtel.
-      intent: demande_reservation_hotel
-    - action: utter_demande_reservation_hotel
-    - user: |
-        Je prévois d'arriver le 25 avril.
-      intent: fournir_details_reservation
-    - action: utter_confirmation_reservation
+  - story: Obtenir des informations sur la réservation
+    steps:
+      - user: |
+          Peux-tu me donner des informations sur ma réservation ?
+        intent: obtenir_information_reservation
+      - action: action_obtenir_information_reservation
+      - action: utter_information_reservation

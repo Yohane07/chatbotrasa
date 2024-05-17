@@ -1,159 +1,70 @@
 version: "3.1"
 
 nlu:
-- intent: saluer
-  examples: |
-    - hey
-    - hello
-    - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
-    - salut 
-    - slt
-    - salut mec
-    - Wesh
-    - Bonjour
-    - Mon ga 
-    - Debut
-  
+  - intent: saluer
+    examples: |
+      - hey
+      - hello
+      - hi
+      - hello there
+      - good morning
+      - good evening
+      - moin
+      - hey there
+      - let's go
+      - hey dude
+      - goodmorning
+      - goodevening
+      - good afternoon
+      - salut 
+      - slt
+      - salut mec
+      - Wesh
+      - Bonjour
+      - Mon ga 
+      - Debut
 
-- intent: goodbye
-  examples: |
-    - cu
-    - good by
-    - cee you later
-    - good night
-    - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
-    - salut 
-    - bisous 
-    - salut 
-    - aurevoir 
-    - à bientôt
-    - à plus tard 
 
-- intent: affirmation
-  examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
-    - oui 
-    - ouais 
-    - yep 
-    - ouais ouais 
-    - oui 
-    - exact
-    - c'est ça 
+  - intent: goodbye
+    examples: |
+      - cu
+      - good by
+      - cee you later
+      - good night
+      - bye
+      - goodbye
+      - have a nice day
+      - see you around
+      - bye bye
+      - see you later
+      - salut 
+      - bisous 
+      - salut 
+      - aurevoir 
+      - à bientôt
+      - à plus tard 
 
-- intent: refuser
-  examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
-    - non 
-    - je suis pas d'accord 
-    - hum hum 
-    - peut être 
-    - pas 
-    - absolument pas 
-    - négatif
+  - intent: reservation_table
+    examples: |
+      - Je voudrais réserver une table.
+      - Réserver une table s'il vous plaît.
+      - J'aimerais faire une réservation.
 
-- intent: bon_mood
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
-    - trop bien 
-    - excellent 
-    - ouaiissss
-    - aller 
+  - intent: annuler_reservation
+    examples: |
+      - J'aimerais annuler ma réservation.
+      - Annuler ma réservation, s'il vous plaît.
+      - Je veux annuler ma réservation.
 
-- intent: triste_mood
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
-    - je ne vais pas bien 
-    - je suis triste 
-    - je ne me sens pas bien 
+  - intent: obtenir_information_reservation
+    examples: |
+      - Peux-tu me donner des informations sur ma réservation ?
+      - Je voudrais vérifier ma réservation.
+      - Détails de ma réservation, s'il vous plaît.
 
-- intent: je_suis_un_robot
-  examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
-    - es-tu un robot ou mieux une IA ?
-
-- intent: météo
-  examples: |
-    - quel temps fait-il aujourd'hui ?
-    - quelle est la météo ?
-    - va-t-il pleuvoir demain ?
-    - aurons-nous du soleil ce week-end ?
-    - j'aimerais connaître la météo
-
-- intent: demande_reservation_hotel
-  examples: |
-    - Je voudrais réserver une chambre d'hôtel.
-    - Pouvez-vous m'aider à trouver un hôtel ?
-    - Est-ce que vous pouvez réserver une chambre pour moi ?
-    - Je veux passer une nuit à l'hôtel.
-    - J'aimerais réserver une chambre pour ce week-end.
-    - Combien coûte une nuit à l'hôtel ?
-    - Y a-t-il des chambres disponibles ce soir ?
-    - Est-ce que vous pouvez me recommander un bon hôtel ?
-    - Je cherche un hébergement pour mon voyage.
-    
-- intent: fournir_details_reservation
-  examples: |
-    - Je prévois d'arriver le 25 avril.
-    - J'aurai besoin de la chambre pour deux adultes et un enfant.
-    - Pouvez-vous me trouver un hôtel près du centre-ville ?
-    - Est-ce que le petit déjeuner est inclus dans le tarif de la chambre ?
-    - Y a-t-il un parking disponible à l'hôtel ?
-    - Quelles sont les installations de l'hôtel ?
-    - À quelle heure est le check-in et le check-out ?
-    - Je voudrais une chambre non-fumeur.
-    - Je préfère une chambre avec vue sur la mer.Z
+  - intent: fournir_details_reservation
+    examples: |
+      - Pour [2 personnes](nombre_personnes)
+      - Le [20 avril](date_reservation)
+      - Sous le nom de [Jean Dupont](nom_reservation)
+      - Mon numéro de téléphone est [0601020304](numero_telephone)

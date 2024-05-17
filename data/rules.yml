@@ -2,12 +2,12 @@ version: "3.1"
 
 rules:
 
-- rule: dire aurevoir chaque fois que l'utilisateur le dira
-  steps:
-  - intent: aurevoir
-  - action: utter_aurevoir
+  - rule: dire aurevoir chaque fois que l'utilisateur le dira
+    steps:
+      - intent: aurevoir
+      - action: utter_aurevoir
 
-- rule: Dire je suis un robot chaque fois que la question est demander
-  steps:
-  - intent: je_suis_un_robot
-  - action: utter_je_suis_un_robot
+  - rule: Dire je suis un robot chaque fois que la question est demander
+    steps:
+      - intent: je_suis_un_robot
+      - action: utter_je_suis_un_robot

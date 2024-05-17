@@ -12,44 +12,58 @@ intents:
   - demande_reservation_hotel
   - fournir_details_reservation
 
+
+slots:
+  date_reservation:
+    type: text
+  nombre_personnes:
+    type: text
+  nom_reservation:
+    type: text
+  numero_telephone:
+    type: text
+  numero_reservation:
+    type: text
+  commentaire:
+    type: text
+  nom_restaurant:
+    type: text
+
+
 responses:
   utter_saluer:
-  - text: "Hey! Comment allez vous ?"
-
-  utter_remettre_bien:
-  - text: "Cela devrait vous faire du bien:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_confirmation_aide:
-  - text: "Cela vous a t-il aidé ?"
-
-  utter_content:
-  - text: "Très bien, ravis de l'apprendre"
-
+    - text: "Hey! Comment allez vous ?"
   utter_aurevoir:
-  - text: "aurevoir"
-
-  utter_triste_mood:
-  - text: "Qu'est ce qui ne va pas ?"
-
-  utter_je_suis_un_robot:
-  - text: "Je suis un robot, conçu par Rasa."
-
-  utter_météo:
-    - text: "Vous pouvez consulter la météo mondiale sur ce lien : 
-    [lien](https://meteofrance.com/meteo-monde/chek/8375110)"
-
-  utter_demande_reservation_hotel:
-    - text: "Bien sûr ! Je vais vous aider à trouver un hôtel. 
-    Pouvez-vous me donner vos dates d'arrivée et de départ ainsi que le nombre de personnes ?"
-
-  utter_fournir_details_reservation:
-    - text: "D'accord. Pourriez-vous préciser votre date d'arrivée, 
-    le nombre de personnes et vos préférences ?"
-
+    - text: "aurevoir"
+  utter_demande_reservation_table:
+    - text: "Bien sûr ! Je vais vous aider à faire une réservation. 
+    Pour quelle date souhaitez vous réserver ?"
+  utter_ask_date_reservation:
+    - text: "Pour quelle date souhaitez-vous réserver ?"
+  utter_ask_nombre_personnes:
+    - text: "Pour combien de personnes souhaitez-vous réserver ?"
+  utter_ask_nom_reservation:
+    - text: "A quel nom souhaitez-vous réserver ?"
+  utter_ask_numero_telephone:
+    - text: "Quel est votre numéro de téléphone ?"
   utter_confirmation_reservation:
-    - text: "Votre réservation d'hôtel a été confirmée ! Voici les détails 
-    : [Insérer détails de la réservation]."
+    - text: "Votre réservation a été confirmée pour {nombre_personnes} personnes le {date_reservation} sous le nom de {nom_reservation}. Votre numéro de réservation est {numero_reservation}."
+  utter_annulation_confirmation:
+    - text: "Votre réservation a été annulée avec succès."
+  utter_information_reservation:
+    - text: "Voici les informations sur votre réservation : Date : {date_reservation}, Nombre de personnes : {nombre_personnes}, Nom de réservation : {nom_reservation}, Restaurant : {nom_restaurant}."
+  utter_menu_jour:
+    - text: "Voici le menu du jour : [Menu du jour](lien_menu_jour)."
+  utter_menu_complet:
+    - text: "Voici le menu complet : [Menu complet](lien_menu_complet)."
+
+actions:
+  - action_verifier_disponibilite
+  - action_generer_numero_reservation
+  - action_annuler_reservation
+  - action_obtenir_information_reservation
+  - action_ajouter_commentaire
+  - action_afficher_menu
 
 session_config:
   session_expiration_time: 60
